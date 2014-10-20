@@ -1,0 +1,29 @@
+body{
+    background: #d9edf7;
+}
+.page-header{
+    text-align: center;
+    border-bottom: none;
+    margin: 0;
+}
+
+.state-container{
+    padding-top: 80px;
+}
+
+
+.hang{
+    background: #dff0d8;
+}
+.rest{
+    background: #f2dede;
+}
+.state{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.countdown{
+    text-align: center;
+    font-size: 150px;
+}

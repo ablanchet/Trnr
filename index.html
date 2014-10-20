@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="poutromatic">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Poutromatic !</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body style="height: 100%;" ng-class="state" ng-controller="MainController">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="page-header">
+                    <h1>Trnr !</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <button type="button" class="btn btn-primary btn-lg btn-block" ng-show="state === 'waiting'" ng-click="start()">Start now !</button>
+                <button type="button" class="btn btn-block" ng-show="state !== 'waiting'" ng-click="stop()">Errh stop !</button>
+            </div>
+        </div>
+        <div class="row state-container">
+            <div class="col-md-4 col-md-offset-4">
+                <p class="state" ng-show="state === 'hang'">Hang !</p>
+                <p class="state" ng-show="state === 'rest'">Rest ...</p>
+                <p class="state" ng-show="state === 'longrest'">Rest for 2 minutes</p>
+                <p class="countdown" ng-show="state === 'hang' || state === 'rest' || state === 'longrest'">{{counter}}</p>
+            </div>
+        </div>
+        <div class="row state-container">
+            <div class="col-md-4 col-md-offset-4">
+                <p class="state" ng-show="state === 'yey'">YEY !</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/progressbar.js/dist/progressbar.min.js"></script>
+    <script src="bower_components/angularjs/angular.min.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="js/mainController.js"></script>
+</body>
+</html>
