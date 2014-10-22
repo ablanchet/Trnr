@@ -24,6 +24,9 @@ angular.module('trnr', ['ngTouch']).controller('MainController', function($scope
                 $scope.counter--;
 
                 if($scope.counter == 0){
+
+                    document.getElementById('beep').play();
+
                     if($scope.state === 'prepare' || $scope.state === 'rest' || $scope.state === 'longrest'){
                         $scope.state = 'hang';
                         $scope.counter = cfg.hangingTimeInSec;
