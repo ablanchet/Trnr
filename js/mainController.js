@@ -1,4 +1,4 @@
-angular.module('poutromatic', ['ngTouch']).controller('MainController', function($scope, $interval){
+angular.module('trnr', ['ngTouch']).controller('MainController', function($scope, $interval){
 
     var cfg = {
         hangingTimeInSec: 8,
@@ -15,9 +15,8 @@ angular.module('poutromatic', ['ngTouch']).controller('MainController', function
 
     $scope.start = function() {
         $scope.isRunning = true;
-
-        $scope.state = 'hang';
-        $scope.counter = cfg.hangingTimeInSec;
+        $scope.state = 'prepare';
+        $scope.counter = 3;
 
         cancellation = $interval(function(){
             if($scope.isRunning){
@@ -25,7 +24,7 @@ angular.module('poutromatic', ['ngTouch']).controller('MainController', function
                 $scope.counter--;
 
                 if($scope.counter == 0){
-                    if($scope.state === 'rest' || $scope.state === 'longrest'){
+                    if($scope.state === 'prepare' || $scope.state === 'rest' || $scope.state === 'longrest'){
                         $scope.state = 'hang';
                         $scope.counter = cfg.hangingTimeInSec;
                         return;
